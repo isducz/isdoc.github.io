@@ -219,7 +219,7 @@
    <sch:pattern>
       <sch:title>Nedaňový doklad nesmí obsahovat řádkové položky podléhající DPH</sch:title>
       <sch:rule context="isdoc:Invoice[isdoc:VATApplicable = 'false']">
-            <sch:assert test="every $va in isdoc:InvoiceLines/isdoc:InvoiceLine/isdoc:ClassifiedTaxCategory/isdoc:VATApplicable satisfied $va = 'false'">Je-li doklad nedaňový (element VATApplicable obsahuje hodnotu
+            <sch:assert test="every $va in isdoc:InvoiceLines/isdoc:InvoiceLine/isdoc:ClassifiedTaxCategory/isdoc:VATApplicable satisfies $va = 'false'">Je-li doklad nedaňový (element VATApplicable obsahuje hodnotu
             false), musejí být i všechny jeho řádkové položky nedaňové, tedy
           element VATApplicable uvnitř elementu ClassifiedTaxCategory rovněž
           obsahuje hodnotu false. Obráceně to však neplatí – na dokladu
